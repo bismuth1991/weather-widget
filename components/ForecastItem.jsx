@@ -23,7 +23,7 @@ const ForecastItem = ({
     </p>
     <p>{`Humidity: ${humidity}%`}</p>
     <p>{`Wind: ${wind}mph`}</p>
-    <p>{`Rain: ${rain}% chance`}</p>
+    <p>{`Rain: ${rain || 0}% chance`}</p>
   </div>
 );
 

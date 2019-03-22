@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { instanceOf } from 'prop-types';
 
-import AppContaier from './App';
+import AppContaier from './AppCotainer';
 
 const Root = ({ store }) => (
   <Provider store={store}>

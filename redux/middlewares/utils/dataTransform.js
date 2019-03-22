@@ -25,13 +25,14 @@ const getDayData = (data, numDaysInFuture) => {
   };
 };
 
-const transform = (res) => {
-  const { city, list } = res;
+function transform(data) {
+  const { city, list } = data;
   const day1 = getDayData(list, 1);
   const day2 = getDayData(list, 2);
   const day3 = getDayData(list, 3);
-  const forcastData = [day1, day2, day3];
-  return { cityInfo: { name: city.name }, forcastData };
-};
+  const forecastData = [day1, day2, day3];
+
+  return { cityInfo: { name: city.name }, forecastData };
+}
 
 export default transform;

@@ -1,7 +1,7 @@
 import { SET_LOADER } from '../actions/uiActions';
 
 const initialState = {
-  loading: false,
+  loading: true,
 };
 
 const uiReducer = (state = initialState, action) => {

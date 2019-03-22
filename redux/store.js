@@ -1,15 +1,16 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
 
-import entitiesReducer from './reducers/forecastReducer';
+import forecastReducer from './reducers/forecastReducer';
 import uiReducer from './reducers/uiReducer';
 
 import apiMiddleware from './middlewares/core/apiMiddleware';
 import stateFreezer from './reducerEnhancers/stateFreezer';
 import forecastMiddleware from './middlewares/feature/forecastMiddleware';
+import dataTransformMiddleware from './middlewares/core/dataTransformMiddleware';
 
 const rootReducer = combineReducers({
-  entities: entitiesReducer,
+  entities: forecastReducer,
   ui: uiReducer,
 });
 
@@ -19,6 +20,7 @@ const featureMiddlewares = [
 
 const coreMiddlewares = [
   apiMiddleware,
+  dataTransformMiddleware,
   logger,
 ];
 

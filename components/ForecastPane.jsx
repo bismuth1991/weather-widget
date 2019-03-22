@@ -5,7 +5,7 @@ import ForecastItem from './ForecastItem';
 const ForecastPane = ({ forecastData }) => (
   <ul>
     {forecastData.map(forecastItem => (
-      <li key={forecastItem.dt}>
+      <li key={forecastItem.dtText}>
         <ForecastItem {...forecastItem} />
       </li>
     ))}

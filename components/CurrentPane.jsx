@@ -1,11 +1,15 @@
 import React from 'react';
 
 const CurrentPane = ({
-  cityName,
-  zipCode,
-  temperature,
+  cityInfo,
+  currentHiTemp,
+  currentLoTemp,
 }) => (
-  <div>I am the CurrentPane</div>
+  <div>
+    <h1>{cityInfo.name}</h1>
+    <p>{`Low: ${currentLoTemp}`}</p>
+    <p>{`High: ${currentHiTemp}`}</p>
+  </div>
 );
 
 export default CurrentPane;

@@ -5,12 +5,11 @@ import {
   apiError,
 } from '../../actions/apiActions';
 
-const request = (url, method = 'GET', data = {}, dataTransformer) => (
+const request = (url, method = 'GET', data) => (
   axios.request({
     url,
     method,
     data,
-    transformResponse: dataTransformer,
   })
 );
 
@@ -22,7 +21,7 @@ const apiMiddleware = ({ dispatch }) => next => (action) => {
     const { url, method, data } = action.payload;
 
     request(url, method, data)
-      .then(response => dispatch(apiSuccess(response, feature)))
+      .then(response => dispatch(apiSuccess(response.data, feature)))
       .catch(error => dispatch(apiError(error, feature)));
   }
 };
